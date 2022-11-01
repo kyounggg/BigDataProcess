@@ -24,6 +24,7 @@ for line in f:
 	fw.write(day)
 	fw.write(" ")
 	fw.write(arr_line[2])
+	fw.write(",")
 	fw.write(arr_line[3])
 	fw.write("\n")
 
