@@ -18,10 +18,7 @@ for line in f:
 			dic_genre[word] = 1
 	
 for k, v in dic_genre.items():
-	fw.write(k)
-	fw.write(" ")
-	fw.write(str(v))
-	fw.write("\n")
+	fw.write(k+" "+str(v)+"\n")
 
 f.close()
 fw.close()	
