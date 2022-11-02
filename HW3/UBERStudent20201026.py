@@ -13,20 +13,22 @@ def get_the_day(date):
 	day = _date.weekday()
 	return days[day]
 
+def print_list_uber(list_uber):
+	for i in list_uber:
+		fw.write(i[0]+","+i[1]+" "+i[2]+","+i[3]+"\n")	
 list_uber = []
 
 for line in f:
 	line = line.strip()
 	arr_line = line.split(',')
-	fw.write(arr_line[0])
 	day = get_the_day(arr_line[1])
-	fw.write(",")
-	fw.write(day)
-	fw.write(" ")
-	fw.write(arr_line[2])
-	fw.write(",")
-	fw.write(arr_line[3])
-	fw.write("\n")
+	arr_list = []
+	arr_list.append(arr_line[0])
+	arr_list.append(day)
+	arr_list.append(arr_line[2])
+	arr_list.append(arr_line[3]) 
+	list_uber.append(arr_list) 
+print_list_uber(list_uber)
 
 f.close()
 fw.close()
