@@ -28,17 +28,21 @@ for line in f:
 
 dic_uber = {}
 for line in list_uber:
-	temp = []
-	temp_list = []
-	temp.append(line[1])
-	temp.append(line[2])
-	temp.append(line[3])
+	temp = [] 
+	dic_temp = {}
+	temp_list = {}
+	temp.append(int(line[2]))
+	temp.append(int(line[3]))
+	dic_temp[line[1]] = temp
 	if line[0] in dic_uber:
-		temp_list.extend(dic_uber[line[0]])	
-		temp_list.append(temp)
+		if line[1] in dic_uber[line[0]]:
+			list(dic_uber[line[0]][line[1]])[0] = temp[0]+list(dic_uber[line[0]][line[1]])[0] 	
+			list(dic_uber[line[0]][line[1]])[1] = temp[1]+list(dic_uber[line[0]][line[1]])[1] 
+		temp_list = dic_uber[line[0]]
 	else:
-		temp_list.append(temp)
-	dic_uber[line[0]] = temp_list	
+		dic_uber[line[0]] = dic_temp
+	dic_uber[line[0]] = dic_temp			
+print(dic_uber)
 
 for k, v in dic_uber.items():
 	for i in v:
