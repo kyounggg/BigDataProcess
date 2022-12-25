@@ -50,7 +50,7 @@ length = len(testFileList)
 
 matrix, labels = createDataSet(trainingFileDirName)
 
-for k in range(1, 20, 2): 
+for k in range(1, 21): 
     count = 0 
     errorCount = 0 
     
@@ -63,5 +63,4 @@ for k in range(1, 20, 2):
         if answer != classifiedResult :
             errorCount += 1
     
-    #print(str(errorCount) + "/" + str(count))
     print(int(errorCount / count * 100))
